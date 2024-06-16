@@ -20,7 +20,7 @@ const setHeaders = (values: Record<string, string | null>) => {
     ["post", "put", "patch", "delete"].forEach((method) => {
       /** @ts-ignore */
       axios.defaults.headers[method][key] = value
-    })
+    }),
   )
 }
 
@@ -31,7 +31,7 @@ const resetHeaders = () => {
     ["get", "post", "put", "patch", "delete"].forEach((method) => {
       /** @ts-ignore */
       delete axios.defaults.headers[method][key]
-    })
+    }),
   )
 }
 
@@ -91,7 +91,7 @@ watch(
       resolveComponent()
     }
   },
-  { deep: true }
+  { deep: true },
 )
 
 watch(key, updateHeaders)
